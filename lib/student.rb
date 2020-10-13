@@ -46,11 +46,25 @@ attr_accessor :name, :grade, :id
     DB[:conn].execute(sql, name, grade)
   end
   
+  def self.new_from_db(row)
+    sql = <<-SQL
+      SELECT * FROM students
+      SQL
+    DB[:conn].execute(sql).map do |row|
+      self.id = row[0]
+      self.name = row[1]
+      self.grade = row[2]
+    end
+  end
+  
+  
   def update
     sql = <<-SQL
     UPDATE students SET name = ?, grade = ?
     SQL
   DB[:conn].execute(sql, self.name, self.grade)
   end
+  
+  
   
 end
