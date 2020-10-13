@@ -51,9 +51,10 @@ attr_accessor :name, :grade, :id
       SELECT * FROM students
       SQL
     DB[:conn].execute(sql).map do |row|
-      self.id = row[0]
-      self.name = row[1]
-      self.grade = row[2]
+      new_student = self.new
+      new_student.id = row[0]
+      new_student.name = row[1]
+      new_student.grade = row[2]
     end
   end
   
