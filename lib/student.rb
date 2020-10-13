@@ -47,10 +47,6 @@ attr_accessor :name, :grade, :id
   end
   
   def self.new_from_db(row)
-   sql = <<-SQL
-      SELECT * FROM students
-      SQL
-    DB[:conn].execute(sql).map do |row|
       new_student = self.new
       new_student.id = row[0]
       new_student.name = row[1]
