@@ -43,7 +43,7 @@ attr_accessor :name, :grade, :id
     sql = <<-SQL
     INSERT INTO students (name, grade) VALUES (?, ?)
     SQL
-    DB[:conn].execute(sql, name:, grade:)
+    DB[:conn].execute(sql, name, grade)
   end
   
   def update
