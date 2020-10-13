@@ -28,6 +28,7 @@ attr_accessor :name, :grade, :id
   end
   
   def save
+    if 
     sql = <<-SQL
     INSERT INTO students (name, grade) VALUES (?, ?)
     SQL
