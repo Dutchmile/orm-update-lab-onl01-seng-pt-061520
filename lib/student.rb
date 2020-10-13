@@ -39,7 +39,7 @@ attr_accessor :name, :grade, :id
   end
   end
   
-  def self.create(name:, grade:)
+  def self.create(name, grade)
     sql = <<-SQL
     INSERT INTO students (name, grade) VALUES (?, ?)
     SQL
