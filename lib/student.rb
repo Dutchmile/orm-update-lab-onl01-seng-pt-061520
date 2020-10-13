@@ -39,7 +39,7 @@ attr_accessor :name, :grade, :id
   end
   end
   
-  def self.update
+  def update
   end
   
 end
