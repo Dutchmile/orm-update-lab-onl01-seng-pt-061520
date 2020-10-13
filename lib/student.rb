@@ -57,8 +57,7 @@ attr_accessor :name, :grade, :id
     LIMIT 1
     SQL
     DB[:conn].execute(sql, name).map do |row|
-      new_student = self.new(row[1], row[2], row[0])
-      new_student
+      self.new(row[1], row[2], row[0])
     end
   end
   
