@@ -56,6 +56,7 @@ attr_accessor :name, :grade, :id
       new_student.name = row[1]
       new_student.grade = row[2]
     end
+    new_student
   end
   
   
