@@ -58,7 +58,7 @@ attr_accessor :name, :grade, :id
     SQL
     DB[:conn].execute(sql, name).map do |row|
       self.new(row[1], row[2], row[0])
-    end
+    end.first
   end
   
   def update
